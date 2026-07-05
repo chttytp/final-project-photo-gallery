@@ -1,0 +1,98 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #dedede;
+}
+
+h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+p {
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Mobile view - mobile first, no media query */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+figure {
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+figure img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+figcaption {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+/* Tablet View - triggers at 772px */
+@media (min-width: 772px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  figure {
+    border-radius: 50%;
+  }
+
+  figure:last-child {
+    grid-column: span 2;
+  }
+}
+
+/* Large Screen View - triggers at 992px */
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  figure:nth-child(3n) {
+    grid-column: span 2;
+  }
+
+  figure {
+    border-radius: 0;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark color scheme preference */
+@media (prefers-color-scheme: dark) {
+  figure {
+    background-color: #222222;
+    color: #f5e79e;
+    border: 2px solid #000000;
+  }
+}
